@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import useFirebase from '../../../hooks/useFirebase';
 
 const Navigation = () => {
-    const {users, logOut} = useFirebase();
+    const {users, logOut} = useAuth();
     return (
         <div className='sticky-top'>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -18,7 +19,7 @@ const Navigation = () => {
                                 <a className="nav-link active" aria-current="page" href="#">Home</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Link</a>
+                                <Link className="nav-link" to="/services">Services</Link>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

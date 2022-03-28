@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import register from '../../../../images/registration.webp'
+import useAuth from '../../../hooks/useAuth';
 import useFirebase from '../../../hooks/useFirebase';
 
 
 const Registration = () => {
     const [loginData, setLoginData] =useState({});
-    const {user, createUser} = useFirebase();
+    const {user, createUser, googleSignIn} = useAuth();
+    const location = useLocation()
+    const history = useHistory()
     const handleOnBlur = (e) => {
         const field = e.target.name;
         const value = e.target.value;
@@ -17,7 +22,11 @@ const Registration = () => {
     }
     const handleOnSubmit = e => {
         e.preventDefault();
-        createUser(loginData.displayName, loginData.email, loginData.password)
+        createUser(loginData.displayName, loginData.email, loginData.password, history, location)
+    }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn(history, location);
     }
     return (
 <div className='container'>
@@ -49,7 +58,7 @@ const Registration = () => {
                     </form>
                     <p className='text-center'>-----------------------------------</p>
                     <div className='text-center'>
-                    <button>Google Sign In</button>
+                    <button onClick={handleGoogleSignIn}>Google Sign In</button>
                     </div>
                     </div>
                 </div>

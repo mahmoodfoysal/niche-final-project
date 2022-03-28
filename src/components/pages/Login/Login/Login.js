@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import login from '../../../../images/login.webp'
-import useFirebase from '../../../hooks/useFirebase';
+import useAuth from '../../../hooks/useAuth';
 import './Login.css'
+
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
-    const {users, userLogin} = useFirebase()
+    const {users, userLogin, googleSignIn, isLoading} = useAuth()
+    const location = useLocation();
+    const history = useHistory();
     const handleOnBlur = (e) => {
         const field = e.target.name;
         const value = e.target.value;
@@ -17,10 +22,15 @@ const Login = () => {
 
     const handleLoginUser = e => {
         e.preventDefault();
-        userLogin(loginData.email, loginData.password)
+        userLogin(loginData.email, loginData.password, location, history)
+    }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn(location, history)
     }
     return (
         <div className='container'>
+
             <div className="row">
                 <div className="col-md-6 col-sm-12">
                     <img width={'100%'} src={login} alt="" />
@@ -45,7 +55,7 @@ const Login = () => {
                     </form>
                     <p className='text-center'>-----------------------------------</p>
                     <div className='text-center'>
-                    <button>Google Sign In</button>
+                    <button onClick={handleGoogleSignIn}>Google Sign In</button>
                     </div>
                     </div>
                 </div>

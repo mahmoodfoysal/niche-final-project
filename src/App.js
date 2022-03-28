@@ -7,10 +7,14 @@ import Home from './components/pages/Home/Home/Home';
 import Login from './components/pages/Login/Login/Login';
 import Navigation from './components/pages/Shared/Navigation/Navigation';
 import Registration from './components/pages/Login/Registration/Registration';
+import AuthProvider from './components/Context/AuthProvider/AuthProvider';
+import Services from './components/pages/Home/Services/Services';
+import PrivateRoute from './components/pages/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
-    <div className="">
+    <div>
+    <AuthProvider>
       <BrowserRouter>
       <Navigation></Navigation>
         <Switch>
@@ -20,6 +24,9 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
+          <PrivateRoute path="/services">
+            <Services></Services>
+          </PrivateRoute>
           <Route path="/login">
             <Login></Login>
           </Route>
@@ -29,7 +36,9 @@ function App() {
 
         </Switch>
       </BrowserRouter>
+      </AuthProvider>
     </div>
+    
   );
 }
 
