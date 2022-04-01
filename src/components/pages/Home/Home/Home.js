@@ -1,14 +1,15 @@
 import { Alert } from '@mui/material';
 import React from 'react';
 import useAuth from '../../../hooks/useAuth';
-import Navigation from '../../Shared/Navigation/Navigation';
+import Banner from '../Banner/Banner';
 import Services from '../Services/Services';
 
+
 const Home = () => {
-    const {users} = useAuth();
+    const { users,setIsLoading, isLoading } = useAuth();
     return (
         <div>
-                        {users.email && <Alert severity="success">This is a success alert — check it out!</Alert>}
+            <Banner></Banner>
             <Services></Services>
         </div>
     );

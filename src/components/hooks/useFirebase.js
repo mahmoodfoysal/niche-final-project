@@ -15,8 +15,9 @@ const auth = getAuth();
 const googleProvider = new GoogleAuthProvider();
 
 const useFirebase = () => {
-    const [users, setUsers] = useState({})
-    const [isLoading, setIsLoading] = useState(true)
+    const [users, setUsers] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
+    const [authError, setAuthError] = useState('');
 
         // custom user create account 
     const createUser = (displayName, email, password, history) => {
@@ -28,16 +29,13 @@ const useFirebase = () => {
         displayName: displayName
     })
     .then(() => {
-
     })
     setUsers(user);
+    setAuthError('');
     history.replace('/')
-
-    
   })
   .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
+    setAuthError(error.message)
   }).finally(() => setIsLoading(false));
 
     }
@@ -50,13 +48,13 @@ const useFirebase = () => {
       const destination = location?.state?.from || '/';
       history.replace(destination);
     const user = result.user;
-    console.log(user)
-    setUsers(user)
+    console.log(user);
+    setUsers(user);
+    setAuthError('');
     
   })
   .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
+    setAuthError(error.message)
   }).finally(() => setIsLoading(false));
     }
 
@@ -111,7 +109,9 @@ const useFirebase = () => {
         userLogin,
         googleSignIn,
         users,
-        isLoading
+        setIsLoading,
+        isLoading,
+        authError
     }
 
 }

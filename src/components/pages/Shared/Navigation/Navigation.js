@@ -21,6 +21,9 @@ const Navigation = () => {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/services">Services</Link>
                             </li>
+                            {users.email && <li className="nav-item">
+                                <Link className="nav-link active" aria-current="page" to="/dashBoard">Admin Dashboard</Link>
+                            </li>}
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Dropdown
@@ -35,6 +38,7 @@ const Navigation = () => {
 
                         </ul>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+
                             <li>{users.displayName}</li>
                             {users.displayName ? <button onClick={logOut}>Log Out</button>:
                             <Link to="/login"><button>Log In</button></Link>}

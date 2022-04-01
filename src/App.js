@@ -10,6 +10,7 @@ import Registration from './components/pages/Login/Registration/Registration';
 import AuthProvider from './components/Context/AuthProvider/AuthProvider';
 import Services from './components/pages/Home/Services/Services';
 import PrivateRoute from './components/pages/Login/PrivateRoute/PrivateRoute';
+import Dashboard from './components/pages/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <PrivateRoute path="/services">
             <Services></Services>
+          </PrivateRoute>
+          <PrivateRoute path="/dashBoard">
+            <Dashboard></Dashboard>
           </PrivateRoute>
           <Route path="/login">
             <Login></Login>
