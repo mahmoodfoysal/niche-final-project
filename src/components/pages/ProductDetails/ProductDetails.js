@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 const ProductDetails = () => {
     const { id } = useParams();
     const [productDetails, setProductDetails] = useState([]);
-    const { image, productName, details, price, description } = productDetails;
+    const {_id, image, productName, details, price, description } = productDetails;
     const keyPoint = details?.split("*")
     useEffect(() => {
         fetch(`http://localhost:5000/productDetails/${id}`)
@@ -26,7 +27,9 @@ const ProductDetails = () => {
                         }
                     </ul>
                     <h6>$ {price}</h6>
-                    <button className='purchase-btn'>Purchase</button>
+                    <Link to={`/orderProduct/${_id}`}>
+                            <button className='purchase-btn'>Purchase</button>
+                            </Link>
                 </div>
                 <h2 className='mt-5'>Product Description</h2>
                 <p>{description}</p>

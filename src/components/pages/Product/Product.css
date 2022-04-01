@@ -9,3 +9,10 @@
     background-color: goldenrod;
     color: white;
 }
+
+.card-style {
+    cursor: pointer;
+}
+.card-style:hover {
+    background-color:cornsilk;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './Product.css';
 
 const Product = ({product}) => {
@@ -11,9 +11,10 @@ const Product = ({product}) => {
     return (
         <div>
             <div className="col">
-                    <div className="card" onClick={() => history.push(`/product/${_id}`)}>
+                    <div className="card card-style" >
                         <img src={image} className="card-img-top" alt="Product_image" />
                         <div className="card-body">
+                            <div onClick={() => history.push(`/product/${_id}`)}>
                             <div className='d-flex justify-content-between'>
                             <h5 className="card-title">{productName}</h5>
                             <h6 className="card-title text-danger">{discount}</h6>
@@ -24,9 +25,13 @@ const Product = ({product}) => {
                                     keyPoint?.map(details => <li key={details}>{details}</li>)
                                 }
                             </ul>
+                            </div>
+                            
                             <div className='d-flex justify-content-between'>
                             <h6>$ {price}</h6>
+                            <Link to={`/orderProduct/${_id}`}>
                             <button className='purchase-btn'>Purchase</button>
+                            </Link>
                             </div>
                             
                         </div>

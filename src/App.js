@@ -12,6 +12,7 @@ import Dashboard from './components/pages/Dashboard/Dashboard/Dashboard';
 import Products from './components/pages/Home/Products/Products';
 import HomeProducts from './components/pages/Home/Products/HomeProducts';
 import ProductDetails from './components/pages/ProductDetails/ProductDetails';
+import OrderProduct from './components/pages/OrderProduct/OrderProduct';
 
 function App() {
   return (
@@ -41,6 +42,9 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
+          <PrivateRoute exact path="/orderProduct/:id">
+            <OrderProduct></OrderProduct>
+          </PrivateRoute>
           <Route path="/register">
             <Registration></Registration>
           </Route>
