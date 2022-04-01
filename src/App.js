@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
@@ -8,9 +7,11 @@ import Login from './components/pages/Login/Login/Login';
 import Navigation from './components/pages/Shared/Navigation/Navigation';
 import Registration from './components/pages/Login/Registration/Registration';
 import AuthProvider from './components/Context/AuthProvider/AuthProvider';
-import Services from './components/pages/Home/Services/Services';
 import PrivateRoute from './components/pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './components/pages/Dashboard/Dashboard/Dashboard';
+import Products from './components/pages/Home/Products/Products';
+import HomeProducts from './components/pages/Home/Products/HomeProducts';
+import ProductDetails from './components/pages/ProductDetails/ProductDetails';
 
 function App() {
   return (
@@ -25,9 +26,15 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
-          <PrivateRoute path="/services">
-            <Services></Services>
-          </PrivateRoute>
+          <Route path="/products">
+            <Products></Products>
+          </Route>
+          <Route path="/product/:id">
+            <ProductDetails></ProductDetails>
+          </Route>
+          <Route path="/homeProducts">
+            <HomeProducts></HomeProducts>
+          </Route>
           <PrivateRoute path="/dashBoard">
             <Dashboard></Dashboard>
           </PrivateRoute>

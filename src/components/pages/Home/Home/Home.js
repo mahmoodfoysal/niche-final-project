@@ -2,7 +2,7 @@ import { Alert } from '@mui/material';
 import React from 'react';
 import useAuth from '../../../hooks/useAuth';
 import Banner from '../Banner/Banner';
-import Services from '../Services/Services';
+import HomeProducts from '../Products/HomeProducts';
 
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <Services></Services>
+            <HomeProducts></HomeProducts>
         </div>
     );
 };

@@ -1,0 +1,20 @@
+.form-style form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form-style input, textarea {
+    margin-bottom: 10px ;
+}
+.submit-btn {
+    background-color: white;
+    color: forestgreen;
+    border-radius: 10px;
+    padding: 5px 25px;
+    border: 2px solid forestgreen;
+}
+.submit-btn:hover{
+    background-color: forestgreen;
+    color: white;
+}
