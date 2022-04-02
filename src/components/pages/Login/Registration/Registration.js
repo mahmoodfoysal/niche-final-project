@@ -1,32 +1,40 @@
+import { Alert } from '@mui/material';
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import Swal from 'sweetalert2';
 import register from '../../../../images/registration.webp'
 import useAuth from '../../../hooks/useAuth';
-import useFirebase from '../../../hooks/useFirebase';
 
 
 const Registration = () => {
-    const [loginData, setLoginData] =useState({});
-    const {user, createUser, googleSignIn, isLoading} = useAuth();
+    const [createData, setCreateData] =useState({});
+    const {users, createUser, googleSignIn, isLoading, authError} = useAuth();
     const location = useLocation()
     const history = useHistory()
     const handleOnBlur = (e) => {
         const field = e.target.name;
         const value = e.target.value;
         console.log(field, value);
-        const newLoginData = {...loginData}
-        newLoginData[field] = value;
-        setLoginData(newLoginData);
+        const newUserData = {...createData}
+        newUserData[field] = value;
+        setCreateData(newUserData);
     }
     const handleOnSubmit = e => {
         e.preventDefault();
-        createUser(loginData.displayName, loginData.email, loginData.password, history, location)
+        createUser(createData.displayName, createData.email, createData.password, history, location)
     }
-
     const handleGoogleSignIn = () => {
         googleSignIn(history, location);
+    }
+
+    const loginTrue = () => {
+        Swal.fire(
+            `Success `,
+            `Welcome ${users?.displayName} `,
+            'success'
+        )
     }
     return (
 <div className='container'>
@@ -61,6 +69,11 @@ const Registration = () => {
                                 <span class="visually-hidden">Loading...</span>
                             </div>
                         </div>}
+                        {users?.email && loginTrue()}
+
+{authError && <Alert variant="filled" severity="error">
+    {authError}
+</Alert>}
                     <p className='text-center'>-----------------------------------</p>
                     <div className='text-center'>
                     <button className='google-signin-btn' onClick={handleGoogleSignIn}>Google Sign In</button>

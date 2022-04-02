@@ -29,9 +29,9 @@ const Navigation = () => {
 
                         </ul>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                            {users.displayName && <li className='text-white me-1'>Welcome, </li>}
-                            <li className='text-white nav-item me-2'>{users.displayName} </li>
-                            {users.displayName ? <button className='nav-log-out' onClick={logOut}><i className="fas fa-sign-out-alt"></i> Log Out</button>:
+                            {users?.displayName && <li className='text-white me-1'>Welcome, </li>}
+                            <li className='text-white nav-item me-2'>{users?.displayName} </li>
+                            {users?.displayName ? <button className='nav-log-out' onClick={logOut}><i className="fas fa-sign-out-alt"></i> Log Out</button>:
                             <Link to="/login"><button className='nav-login-btn'><i className="fas fa-sign-in-alt"></i> Log In</button></Link>}
                         </ul>
 

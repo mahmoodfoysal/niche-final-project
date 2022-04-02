@@ -30,14 +30,14 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         googleSignIn(location, history)
     }
-
     const loginTrue = () => {
         Swal.fire(
             `Success `,
-            `Welcome ${users.displayName} `,
+            `Welcome ${users?.displayName} `,
             'success'
         )
     }
+
     return (
         <div className='container'>
 
