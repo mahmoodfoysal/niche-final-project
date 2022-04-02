@@ -13,6 +13,7 @@ import DashBoardHome from '../DashBoardHome/DashBoardHome';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import Payment from '../Payment/Payment';
 import ManageOrders from '../ManageOrders/ManageOrders';
+import ManageProducts from '../ManageProducts/ManageProducts';
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
@@ -54,7 +55,7 @@ const Dashboard = () => {
                             <AddProducts></AddProducts>
                         </Route>
                         <Route path={`${path}/manageProducts`}>
-                            <AddProducts></AddProducts>
+                            <ManageProducts></ManageProducts>
                         </Route>
                         <Route path={`${path}/payment`}>
                             <Payment></Payment>
