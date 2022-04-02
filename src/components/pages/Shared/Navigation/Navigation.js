@@ -21,6 +21,9 @@ const Navigation = () => {
                             <li className="nav-item">
                                 <Link className="nav-link active" aria-current="page" to="/products">Products</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className="nav-link active" aria-current="page" to="/customerOrder">Orders</Link>
+                            </li>
 
                             {users.email && <li className="nav-item">
                                 <Link className="nav-link active" aria-current="page" to="/dashBoard">Admin Dashboard</Link>

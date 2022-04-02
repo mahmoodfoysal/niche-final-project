@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 const ManageOrders = () => {
     const [manageOrders, setManageOrders] = useState([]);
-    const { name, email, address, contactNumber, productName, price, orderStatus, date } = manageOrders;
     useEffect(() => {
         fetch('http://localhost:5000/manageOrders')
             .then(res => res.json())
@@ -10,49 +9,49 @@ const ManageOrders = () => {
     }, [manageOrders])
 
     const handleUpdateClick = (id, status) => {
-        const data = {status: status};
+        const data = { status: status };
         const process = window.confirm("Are you sure")
-        if(process) {
+        if (process) {
             const url = `http://localhost:5000/manageOrders/${id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
                     "content-type": "application/json",
                 },
-                body:JSON.stringify(data)
+                body: JSON.stringify(data)
             })
-            .then(res => res.json())
-            .then(data => {
-                if(data.modifiedCount === 1) {
-                    alert("Successfully Updated ");
-                    setManageOrders(manageOrders);
-                }
-            });
+                .then(res => res.json())
+                .then(data => {
+                    if (data.modifiedCount === 1) {
+                        alert("Successfully Updated ");
+                        setManageOrders(manageOrders);
+                    }
+                });
         }
     };
 
     // delete operation 
     const handleDeleteClick = (id) => {
         const process = window.confirm("Are you sure! You Want to delete")
-        if(process) {
+        if (process) {
             const url = `http://localhost:5000/manageOrders/${id}`;
             fetch(url, {
                 method: 'DELETE',
             })
-            .then(res => res.json())
-            .then(data => {
-                if(data.deletedCount === 1) {
-                    alert('Deleted Successfully')
-                    const remaining = manageOrders.filter(order => order._id !== id)
-                    setManageOrders(remaining);
-                }
-            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount === 1) {
+                        alert('Deleted Successfully')
+                        const remaining = manageOrders.filter(order => order._id !== id)
+                        setManageOrders(remaining);
+                    }
+                })
         }
     }
     return (
         <div className='container'>
             <h1 className='text-center mt-5 mb-5'>Manage Orders</h1>
-            <div>
+            <div className='table-responsive-sm'>
                 <table className="table table-sm table-dark">
                     <thead>
                         <tr>
@@ -75,7 +74,7 @@ const ManageOrders = () => {
                                 <tr>
                                     <th scope="row">*</th>
                                     <td>{manageOrder.name}</td>
-                                    <td>{manageOrder.email}</td>
+                                    <td>{manageOrder.userEmail}</td>
                                     <td>{manageOrder.productName}</td>
                                     <td>$ {manageOrder.price}</td>
                                     <td>{manageOrder.date}</td>
@@ -110,7 +109,7 @@ const ManageOrders = () => {
                                                         Approved
                                                     </button>
                                                 </li>
-                                                
+
                                                 <li>
                                                     <button
                                                         onClick={() =>
@@ -136,7 +135,7 @@ const ManageOrders = () => {
                                             </ul>
                                         </div>
                                     </td>
-                                    <td><i style={{cursor:'pointer'}} onClick={() => handleDeleteClick(manageOrder._id)} className="fas fa-trash text-danger"></i></td>
+                                    <td><i style={{ cursor: 'pointer' }} onClick={() => handleDeleteClick(manageOrder._id)} className="fas fa-trash text-danger"></i></td>
                                 </tr>
 
                             )

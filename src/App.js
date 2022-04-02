@@ -13,6 +13,7 @@ import Products from './components/pages/Home/Products/Products';
 import HomeProducts from './components/pages/Home/Products/HomeProducts';
 import ProductDetails from './components/pages/ProductDetails/ProductDetails';
 import OrderProduct from './components/pages/OrderProduct/OrderProduct';
+import CustomerOrders from './components/pages/CustomerDashboard/CustomerOrders/CustomerOrders';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path="/products">
             <Products></Products>
+          </Route>
+          <Route path="/customerOrder">
+            <CustomerOrders></CustomerOrders>
           </Route>
           <Route path="/product/:id">
             <ProductDetails></ProductDetails>

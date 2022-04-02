@@ -19,7 +19,7 @@ const OrderProduct = () => {
     const onSubmit = data => {console.log(data)
         data.productName = productName;
         data.price = price;
-        data.orderStatus = 'pending'
+        data.orderStatus = 'Pending'
         fetch('http://localhost:5000/order', {
             method:"POST",
             headers: {
@@ -50,7 +50,7 @@ const OrderProduct = () => {
                     <div className='form-style'>
                 <form onSubmit={handleSubmit(onSubmit)}>
                 <input defaultValue={users?.displayName} {...register("name", { required: true})}/>
-                <input defaultValue={users?.email} {...register("email", { required: true})}/>
+                <input defaultValue={users?.email} {...register("userEmail", { required: true})}/>
                 <input {...register("address", { required: true})} placeholder="Enter your Full Address" />
                 <input type="number" {...register("contactNumber", { required: true})} placeholder="Contact Number" />
                 <div className='text-center'>
