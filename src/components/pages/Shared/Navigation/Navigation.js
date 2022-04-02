@@ -16,17 +16,17 @@ const Navigation = () => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/home">Home</Link>
+                                <Link className="nav-link active" aria-current="page" to="/home"><i class="fas fa-home"></i> Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/products">Products</Link>
+                                <Link className="nav-link active" aria-current="page" to="/products"><i class="fas fa-laptop"></i> Products</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/customerOrder">Orders</Link>
+                                <Link className="nav-link active" aria-current="page" to="/customerOrder"><i class="fas fa-shopping-cart"></i> Orders</Link>
                             </li>
 
                             {users.email && <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/dashBoard">Admin Dashboard</Link>
+                                <Link className="nav-link active" aria-current="page" to="/dashBoard"><i class="fas fa-tachometer-alt"></i> Admin Dashboard</Link>
                             </li>}
                             
 
