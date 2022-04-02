@@ -9,7 +9,7 @@ import useFirebase from '../../../hooks/useFirebase';
 
 const Registration = () => {
     const [loginData, setLoginData] =useState({});
-    const {user, createUser, googleSignIn} = useAuth();
+    const {user, createUser, googleSignIn, isLoading} = useAuth();
     const location = useLocation()
     const history = useHistory()
     const handleOnBlur = (e) => {
@@ -36,7 +36,7 @@ const Registration = () => {
                 </div>
                 <div className="col-md-6 col-sm-12">
                     <div className='center mt-5'>
-                    <form onSubmit={handleOnSubmit}>
+                    {!isLoading && <form onSubmit={handleOnSubmit}>
                         <h1 className='text-center text-success mb-4'>Please Registration</h1>
                         <div className="mb-3">
                             <label for="exampleInputEmail1" className="form-label">Enter Your Name</label>
@@ -50,15 +50,20 @@ const Registration = () => {
                             <label for="exampleInputPassword1" className="form-label">Password</label>
                             <input onBlur={handleOnBlur} type="password" name='password' className="form-control" id="exampleInputPassword1" placeholder='Enter Your Password' />
                         </div>
-                        <p>If you have account? <Link to="/login">
+                        <p>If you have account? <Link className='' to="/login">
                         Please Login
                         </Link></p>
-                        <button type="submit" className="btn btn-primary">Register</button>
+                        <button type="submit" className="btn login-btn"><i className="fas fa-sign-in-alt"></i> Register</button>
 
-                    </form>
+                    </form>}
+                    {isLoading && <div class="d-flex justify-content-center">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>}
                     <p className='text-center'>-----------------------------------</p>
                     <div className='text-center'>
-                    <button onClick={handleGoogleSignIn}>Google Sign In</button>
+                    <button className='google-signin-btn' onClick={handleGoogleSignIn}>Google Sign In</button>
                     </div>
                     </div>
                 </div>

@@ -1,0 +1,25 @@
+.nav-login-btn {
+    background-color: white;
+    color: forestgreen;
+    border-radius: 5px;
+    border: 2px solid forestgreen;
+    padding: 5px 10px;
+    font-weight: 600;
+}
+.nav-login-btn:hover {
+    background-color: forestgreen;
+    color: white;
+}
+
+.nav-log-out {
+    background-color: white;
+    color: rgb(252, 138, 138);
+    border-radius: 5px;
+    border: 2px solid rgb(252, 138, 138);
+    padding: 5px 10px;
+    font-weight: 600;
+}
+.nav-log-out:hover {
+    background-color: rgb(252, 138, 138);
+    color: white;
+}

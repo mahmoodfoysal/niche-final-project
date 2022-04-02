@@ -4,8 +4,6 @@ import useAuth from '../../hooks/useAuth';
 import { useForm } from "react-hook-form";
 
 const OrderProduct = () => {
-    
-
     const {id} = useParams();
     const {users} = useAuth();
     const [product, setProduct] = useState([]);
@@ -28,6 +26,14 @@ const OrderProduct = () => {
                 'content-type':'application/json',
             },
             body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.insertedId) {
+                alert("Order Placed")
+                reset();
+
+            }
         })
     };
 

@@ -60,12 +60,12 @@ const Login = () => {
                             <p>If you haven't account? <Link to="/register">
                                 Create Account
                             </Link></p>
-                            <button type="submit" className="btn btn-primary">Log In</button>
+                            <button type="submit" className="btn login-btn"><i className="fas fa-sign-in-alt"></i> Log In</button>
 
                         </form>}
-                        {isLoading && <div class="d-flex justify-content-center">
-                            <div class="spinner-border" role="status">
-                                <span class="visually-hidden">Loading...</span>
+                        {isLoading && <div className="d-flex justify-content-center">
+                            <div className="spinner-border" role="status">
+                                <span className="visually-hidden">Loading...</span>
                             </div>
                         </div>}
 
@@ -76,7 +76,7 @@ const Login = () => {
                         </Alert>}
                         <p className='text-center'>-----------------------------------</p>
                         <div className='text-center'>
-                            <button onClick={handleGoogleSignIn}>Google Sign In</button>
+                            <button className='google-signin-btn' onClick={handleGoogleSignIn}>  Google Sign In</button>
                         </div>
                     </div>
                 </div>

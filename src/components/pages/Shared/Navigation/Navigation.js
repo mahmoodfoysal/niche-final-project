@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import useFirebase from '../../../hooks/useFirebase';
+import './Navigation.css';
 
 const Navigation = () => {
     const {users, logOut} = useAuth();
@@ -25,24 +25,14 @@ const Navigation = () => {
                             {users.email && <li className="nav-item">
                                 <Link className="nav-link active" aria-current="page" to="/dashBoard">Admin Dashboard</Link>
                             </li>}
-                            <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
-                                </a>
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a className="dropdown-item" href="#">Action</a></li>
-                                    <li><a className="dropdown-item" href="#">Another action</a></li>
-                                    <li><hr className="dropdown-divider" /></li>
-                                    <li><a className="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
+                            
 
                         </ul>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-
-                            <li>{users.displayName}</li>
-                            {users.displayName ? <button onClick={logOut}>Log Out</button>:
-                            <Link to="/login"><button>Log In</button></Link>}
+                            {users.displayName && <li className='text-white me-1'>Welcome, </li>}
+                            <li className='text-white nav-item me-2'>{users.displayName} </li>
+                            {users.displayName ? <button className='nav-log-out' onClick={logOut}><i className="fas fa-sign-out-alt"></i> Log Out</button>:
+                            <Link to="/login"><button className='nav-login-btn'><i className="fas fa-sign-in-alt"></i> Log In</button></Link>}
                         </ul>
 
                     </div>
