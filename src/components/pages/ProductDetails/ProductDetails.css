@@ -1,0 +1,21 @@
+.rating-style form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.rating-style input, textarea {
+    margin-bottom: 10px ;
+    width: 40%;
+}
+.rating-btn {
+    background-color: white;
+    color: forestgreen;
+    border-radius: 10px;
+    padding: 5px 25px;
+    border: 2px solid forestgreen;
+}
+.rating-btn:hover{
+    background-color: forestgreen;
+    color: white;
+}

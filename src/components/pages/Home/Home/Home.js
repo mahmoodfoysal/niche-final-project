@@ -1,6 +1,7 @@
-import { Alert } from '@mui/material';
 import React from 'react';
 import useAuth from '../../../hooks/useAuth';
+import ProductsRatings from '../../ProductRating/ProductsRatings';
+
 import Banner from '../Banner/Banner';
 import HomeProducts from '../Products/HomeProducts';
 
@@ -11,6 +12,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <HomeProducts></HomeProducts>
+            <ProductsRatings></ProductsRatings>
         </div>
     );
 };
