@@ -15,6 +15,7 @@ import ProductDetails from './components/pages/ProductDetails/ProductDetails';
 import OrderProduct from './components/pages/OrderProduct/OrderProduct';
 import CustomerOrders from './components/pages/CustomerDashboard/CustomerOrders/CustomerOrders';
 import Footer from './components/pages/Shared/Footer/Footer';
+import AdminRoute from './components/pages/Login/AdminRoute/AdminRoute';
 
 function App() {
   return (
@@ -41,9 +42,9 @@ function App() {
           <Route path="/homeProducts">
             <HomeProducts></HomeProducts>
           </Route>
-          <PrivateRoute path="/dashBoard">
+          <AdminRoute path="/dashBoard">
             <Dashboard></Dashboard>
-          </PrivateRoute>
+          </AdminRoute>
           <Route path="/login">
             <Login></Login>
           </Route>

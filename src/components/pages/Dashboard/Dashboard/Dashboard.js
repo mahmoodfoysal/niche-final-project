@@ -17,6 +17,7 @@ import PendingOrder from '../ManageOrders/PendingOrder';
 import ApprovedOrder from '../ManageOrders/ApprovedOrder';
 import ShippedOrder from '../ManageOrders/ShippedOrder';
 import DeleveredOrder from '../ManageOrders/DeleveredOrde';
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
@@ -69,31 +70,31 @@ const Dashboard = () => {
                         <Route path={`${path}/dashboardHome`}>
                         <DashBoardHome></DashBoardHome>
                         </Route>
-                        <Route path={`${path}/makeAdmin`}>
+                        <AdminRoute path={`${path}/makeAdmin`}>
                             <MakeAdmin></MakeAdmin>
-                        </Route>
-                        <Route path={`${path}/addProducts`}>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/addProducts`}>
                             <AddProducts></AddProducts>
-                        </Route>
-                        <Route path={`${path}/manageProducts`}>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/manageProducts`}>
                             <ManageProducts></ManageProducts>
-                        </Route>
-                        <Route path={`${path}/pendingOrder`}>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/pendingOrder`}>
                             <PendingOrder></PendingOrder>
-                        </Route>
-                        <Route path={`${path}/approvedOrder`}>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/approvedOrder`}>
                             <ApprovedOrder></ApprovedOrder>
-                        </Route>
-                        <Route path={`${path}/shippedOrder`}>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/shippedOrder`}>
                             <ShippedOrder></ShippedOrder>
-                        </Route>
-                        <Route path={`${path}/deleveredOrder`}>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/deleveredOrder`}>
                             <DeleveredOrder></DeleveredOrder>
-                        </Route>
+                        </AdminRoute>
 
-                        <Route path={`${path}/payment`}>
+                        <AdminRoute path={`${path}/payment`}>
                             <Payment></Payment>
-                        </Route>
+                        </AdminRoute>
                     </Switch>
                 </div>
             </div>
