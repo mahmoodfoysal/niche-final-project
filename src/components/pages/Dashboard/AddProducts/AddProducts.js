@@ -28,7 +28,7 @@ const AddProducts = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("productName", { required: true})} placeholder="Enter product name" />
                 <textarea {...register("description", { required: true})} placeholder="Please give product description" />
-                <input {...register("details", { required: true})} placeholder="Please give product details" />
+                <textarea {...register("details", { required: true})} placeholder="Please give product details" />
                 <input {...register("discount")} placeholder="If you have any discount" />
                 <input type="number" {...register("price", { required: true})} placeholder="Enter product price" />
                 <input {...register("image", { required: true})} placeholder="Please input product image url" />

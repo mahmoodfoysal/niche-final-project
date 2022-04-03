@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -46,33 +47,27 @@ const Footer = () => {
                 <div className="col-md-3">
                     <h3 className="footer-title"><span className="footer-title-text">Quick Link</span><span className="footer-title-underline"></span></h3>
                     <ul className="quick-link-list">
-                        <li><a href="#"> The Secretary</a></li>
-                        <li><a href="#">  Shree Ramakrishna Dev</a></li>
-                        <li><a href="#">  Maa Sarada Devi</a></li>
-                        <li><a href="#"> Swami Vivekananda</a></li>
-                        <li><a href="#"> Education</a></li>
-                        <li><a href="#"> Medical</a></li>
+                        <li><Link to="/home"> Home</Link></li>
+                        <li><Link to="/products"> Products</Link></li>
+                        <li><Link to="/customerOrder"> Orders</Link></li>
+
+
                     </ul>
                 </div>
                 <div className="col-md-3">
                     <h3 className="footer-title title-transparent">Quick Link</h3>
                     <ul className="quick-link-list">
-                        <li><a href="#"> Old Age Home</a></li>
-                        <li><a href="#"> Video Archive</a></li>
-                        <li><a href="#"> News & Events</a></li>
-                        <li><a href="#"> News & Events</a></li>
-                        <li><a href="#"> Youth Welfare Programme</a></li>
-                        <li><a href="#"> Relief Work</a></li>
+                    <li><Link to="/home"> Home</Link></li>
+                        <li><Link to="/products"> Products</Link></li>
+                        <li><Link to="/customerOrder"> Orders</Link></li>
                     </ul>
                 </div>
                 <div className="col-md-3">
                     <h3 className="footer-title title-transparent">Quick Link</h3>
                     <ul className="quick-link-list">
-                        <li><a href="#"> Donation</a></li>
-                        <li><a href="#"> Future Plan</a></li>
-                        <li><a href="#"> Feedback</a></li>
-                        <li><a href="#"> Site Map</a></li>
-                        <li><a href="#"> Contact Us</a></li>
+                    <li><Link to="/home"> Home</Link></li>
+                        <li><Link to="/products"> Products</Link></li>
+                        <li><Link to="/customerOrder"> Orders</Link></li>
                     </ul>
                 </div>
                 <div className="col-md-3">

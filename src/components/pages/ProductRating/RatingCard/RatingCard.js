@@ -8,7 +8,7 @@ const RatingCard = ({ productRating }) => {
         <div>
             <div class="col">
                 <div class="card">
-                    <img src={productImage} class="card-img-top" alt="..." />
+                    <img src={productImage} class="card-img-top" alt="product_image" height="150px"/>
                     <div class="card-body">
                         <h5 class="card-title">{productName}</h5>
                         <Rating

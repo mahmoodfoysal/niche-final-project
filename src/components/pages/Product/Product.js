@@ -12,7 +12,7 @@ const Product = ({product}) => {
         <div>
             <div className="col">
                     <div className="card card-style" >
-                        <img src={image} className="card-img-top" alt="Product_image" />
+                        <img src={image} className="card-img-top" alt="Product_image" height="200px" />
                         <div className="card-body">
                             <div onClick={() => history.push(`/product/${_id}`)}>
                             <div className='d-flex justify-content-between'>

@@ -70,31 +70,31 @@ const Dashboard = () => {
                         <Route path={`${path}/dashboardHome`}>
                         <DashBoardHome></DashBoardHome>
                         </Route>
-                        <AdminRoute path={`${path}/makeAdmin`}>
+                        <Route path={`${path}/makeAdmin`}>
                             <MakeAdmin></MakeAdmin>
-                        </AdminRoute>
-                        <AdminRoute path={`${path}/addProducts`}>
+                        </Route>
+                        <Route path={`${path}/addProducts`}>
                             <AddProducts></AddProducts>
-                        </AdminRoute>
-                        <AdminRoute path={`${path}/manageProducts`}>
+                        </Route>
+                        <Route path={`${path}/manageProducts`}>
                             <ManageProducts></ManageProducts>
-                        </AdminRoute>
-                        <AdminRoute path={`${path}/pendingOrder`}>
+                        </Route>
+                        <Route path={`${path}/pendingOrder`}>
                             <PendingOrder></PendingOrder>
-                        </AdminRoute>
-                        <AdminRoute path={`${path}/approvedOrder`}>
+                        </Route>
+                        <Route path={`${path}/approvedOrder`}>
                             <ApprovedOrder></ApprovedOrder>
-                        </AdminRoute>
-                        <AdminRoute path={`${path}/shippedOrder`}>
+                        </Route>
+                        <Route path={`${path}/shippedOrder`}>
                             <ShippedOrder></ShippedOrder>
-                        </AdminRoute>
-                        <AdminRoute path={`${path}/deleveredOrder`}>
+                        </Route>
+                        <Route path={`${path}/deleveredOrder`}>
                             <DeleveredOrder></DeleveredOrder>
-                        </AdminRoute>
+                        </Route>
 
-                        <AdminRoute path={`${path}/payment`}>
+                        <Route path={`${path}/payment`}>
                             <Payment></Payment>
-                        </AdminRoute>
+                        </Route>
                     </Switch>
                 </div>
             </div>

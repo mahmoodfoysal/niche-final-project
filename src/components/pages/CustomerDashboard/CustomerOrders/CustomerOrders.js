@@ -31,6 +31,10 @@ const CustomerOrders = () => {
                 })
         }
     }
+
+    const handleAlertClick = () => {
+        alert('Payment Added Soon')
+    }
     return (
         <div className='container'>
             <h1 className='text-center mt-5 mb-5'>Orders</h1>
@@ -44,6 +48,7 @@ const CustomerOrders = () => {
                             <th scope="col">Product Name</th>
                             <th scope="col">Price</th>
                             <th scope="col">Date</th>
+                            <th scope="col">Payment</th>
                             <th scope="col">Status</th>
                             <th scope="col">Delete</th>
 
@@ -60,6 +65,7 @@ const CustomerOrders = () => {
                                     <td>{customerOrder.productName}</td>
                                     <td>$ {customerOrder.price}</td>
                                     <td>{customerOrder.date}</td>
+                                    <td><i style={{ cursor: 'pointer' }} onClick={handleAlertClick} className="fab fa-amazon-pay text-warning text-center"></i></td>
                                     <td>{customerOrder.orderStatus}</td>
                                     {customerOrder.orderStatus === 'Pending' ? <td><i style={{ cursor: 'pointer' }} onClick={() => handleDeleteClick(customerOrder._id)} className="fas fa-trash text-danger"></i></td> : <td></td> }
 
