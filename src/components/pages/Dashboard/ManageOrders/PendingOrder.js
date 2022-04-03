@@ -70,7 +70,7 @@ const PendingOrder = () => {
                     <tbody>
                         {
                             manageOrders.map((manageOrder) =>
-                                manageOrder.orderStatus === 'pending' ? <tr>
+                                manageOrder.orderStatus === 'Pending' ? <tr>
                                 <th scope="row">*</th>
                                 <td>{manageOrder.name}</td>
                                 <td>{manageOrder.userEmail}</td>

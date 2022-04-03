@@ -26,32 +26,32 @@ const Dashboard = () => {
                     <h2>Admin Dash Board</h2>
                     <ul>
                         <li>
-                            <Link to={`${url}/dashboardHome`}>Home</Link>
+                            <Link className='li-decoration' to={`${url}/dashboardHome`}>Home</Link>
                         </li>
                         <li>
-                            <Link to={`${url}/makeAdmin`}>Add Admin</Link>
+                            <Link className='li-decoration' to={`${url}/makeAdmin`}>Add Admin</Link>
                         </li>
                         <li>
-                            <Link to={`${url}/addProducts`}>Add Products</Link>
+                            <Link className='li-decoration' to={`${url}/addProducts`}>Add Products</Link>
                         </li>
                         <li>
-                            <Link to={`${url}/manageProducts`}>Manage Products</Link>
+                            <Link className='li-decoration' to={`${url}/manageProducts`}>Manage Products</Link>
                         </li>
                         </ul>
                         <h6>Manage Orders</h6>
                         <ul>
                             <hr />
                         <li>
-                            <Link to={`${url}/pendingOrder`}>Pending Order</Link>
+                            <Link className='li-decoration' to={`${url}/pendingOrder`}>Pending Order</Link>
                         </li>
                         <li>
-                            <Link to={`${url}/approvedOrder`}>Approved Orders</Link>
+                            <Link className='li-decoration' to={`${url}/approvedOrder`}>Approved Orders</Link>
                         </li>
                         <li>
-                            <Link to={`${url}/shippedOrder`}>Shipped Orders</Link>
+                            <Link className='li-decoration' to={`${url}/shippedOrder`}>Shipped Orders</Link>
                         </li>
                         <li>
-                            <Link to={`${url}/payment`}>Payment</Link>
+                            <Link className='li-decoration' to={`${url}/payment`}>Payment</Link>
                         </li>
                         </ul>
                     

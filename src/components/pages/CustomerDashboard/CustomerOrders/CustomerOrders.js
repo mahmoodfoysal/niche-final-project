@@ -61,7 +61,7 @@ const CustomerOrders = () => {
                                     <td>$ {customerOrder.price}</td>
                                     <td>{customerOrder.date}</td>
                                     <td>{customerOrder.orderStatus}</td>
-                                    {customerOrder.orderStatus === 'Approved' ? <td></td>:<td><i style={{ cursor: 'pointer' }} onClick={() => handleDeleteClick(customerOrder._id)} className="fas fa-trash text-danger"></i></td>}
+                                    {customerOrder.orderStatus === 'Pending' ? <td><i style={{ cursor: 'pointer' }} onClick={() => handleDeleteClick(customerOrder._id)} className="fas fa-trash text-danger"></i></td> : <td></td> }
 
                                 </tr>
                             )

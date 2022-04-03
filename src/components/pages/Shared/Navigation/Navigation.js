@@ -4,7 +4,7 @@ import useAuth from '../../../hooks/useAuth';
 import './Navigation.css';
 
 const Navigation = () => {
-    const {users, logOut} = useAuth();
+    const {users, admin, logOut} = useAuth();
     return (
         <div className='sticky-top'>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -25,8 +25,8 @@ const Navigation = () => {
                                 <Link className="nav-link active" aria-current="page" to="/customerOrder"><i class="fas fa-shopping-cart"></i> Orders</Link>
                             </li>
 
-                            {users.email && <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/dashBoard"><i class="fas fa-tachometer-alt"></i> Admin Dashboard</Link>
+                            {admin && <li className="nav-item">
+                                <Link className="nav-link active" aria-current="page" to="/dashBoard"><i class="fas fa-tachometer-alt"></i> Dashboard</Link>
                             </li>}
                             
 
