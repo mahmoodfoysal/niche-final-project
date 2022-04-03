@@ -16,6 +16,7 @@ import ManageProducts from '../ManageProducts/ManageProducts';
 import PendingOrder from '../ManageOrders/PendingOrder';
 import ApprovedOrder from '../ManageOrders/ApprovedOrder';
 import ShippedOrder from '../ManageOrders/ShippedOrder';
+import DeleveredOrder from '../ManageOrders/DeleveredOrde';
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
@@ -51,6 +52,9 @@ const Dashboard = () => {
                             <Link className='li-decoration' to={`${url}/shippedOrder`}>Shipped Orders</Link>
                         </li>
                         <li>
+                            <Link className='li-decoration' to={`${url}/deleveredOrder`}>Delevered Orders</Link>
+                        </li>
+                        <li>
                             <Link className='li-decoration' to={`${url}/payment`}>Payment</Link>
                         </li>
                         </ul>
@@ -82,6 +86,9 @@ const Dashboard = () => {
                         </Route>
                         <Route path={`${path}/shippedOrder`}>
                             <ShippedOrder></ShippedOrder>
+                        </Route>
+                        <Route path={`${path}/deleveredOrder`}>
+                            <DeleveredOrder></DeleveredOrder>
                         </Route>
 
                         <Route path={`${path}/payment`}>
