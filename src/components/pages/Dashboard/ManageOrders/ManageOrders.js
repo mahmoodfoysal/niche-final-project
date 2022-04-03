@@ -70,73 +70,72 @@ const ManageOrders = () => {
                     <tbody>
                         {
                             manageOrders.map((manageOrder) =>
+                                manageOrder.orderStatus === 'pending' ? <tr>
+                                <th scope="row">*</th>
+                                <td>{manageOrder.name}</td>
+                                <td>{manageOrder.userEmail}</td>
+                                <td>{manageOrder.productName}</td>
+                                <td>$ {manageOrder.price}</td>
+                                <td>{manageOrder.date}</td>
+                                <td>{manageOrder.orderStatus}</td>
 
-                                <tr>
-                                    <th scope="row">*</th>
-                                    <td>{manageOrder.name}</td>
-                                    <td>{manageOrder.userEmail}</td>
-                                    <td>{manageOrder.productName}</td>
-                                    <td>$ {manageOrder.price}</td>
-                                    <td>{manageOrder.date}</td>
-                                    <td>{manageOrder.orderStatus}</td>
 
-                                    {/* 
-                            <td><i onClick={() => handleDeleteClick(order._id)} className="fas fa-trash text-danger"></i></td> */}
 
-                                    <td className="text-center">
-                                        <div className="dropdown">
-                                            <button
-                                                className="btn btn-secondary dropdown-toggle btn-sm"
-                                                type="button"
-                                                id="dropdownMenu2"
-                                                data-bs-toggle="dropdown"
-                                                aria-expanded="false"
-                                            >
-                                                <i className="fas fa-tasks"></i> manage
-                                            </button>
-                                            <ul
-                                                className="dropdown-menu"
-                                                aria-labelledby="dropdownMenu2"
-                                            >
-                                                <li>
-                                                    <button
-                                                        onClick={() =>
-                                                            handleUpdateClick(manageOrder._id, "Approved")
-                                                        }
-                                                        className="dropdown-item"
-                                                        type="button"
-                                                    >
-                                                        Approved
-                                                    </button>
-                                                </li>
+                                <td className="text-center">
+                                    <div className="dropdown">
+                                        <button
+                                            className="btn btn-secondary dropdown-toggle btn-sm"
+                                            type="button"
+                                            id="dropdownMenu2"
+                                            data-bs-toggle="dropdown"
+                                            aria-expanded="false"
+                                        >
+                                            <i className="fas fa-tasks"></i> manage
+                                        </button>
+                                        <ul
+                                            className="dropdown-menu"
+                                            aria-labelledby="dropdownMenu2"
+                                        >
+                                            <li>
+                                                <button
+                                                    onClick={() =>
+                                                        handleUpdateClick(manageOrder._id, "Approved")
+                                                    }
+                                                    className="dropdown-item"
+                                                    type="button"
+                                                >
+                                                    Approved
+                                                </button>
+                                            </li>
 
-                                                <li>
-                                                    <button
-                                                        onClick={() =>
-                                                            handleUpdateClick(manageOrder._id, "Shipped")
-                                                        }
-                                                        className="dropdown-item"
-                                                        type="button"
-                                                    >
-                                                        Shipped
-                                                    </button>
-                                                </li>
-                                                <li>
-                                                    <button
-                                                        onClick={() =>
-                                                            handleUpdateClick(manageOrder._id, "Delivered")
-                                                        }
-                                                        className="dropdown-item"
-                                                        type="button"
-                                                    >
-                                                        Delivered
-                                                    </button>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                    <td><i style={{ cursor: 'pointer' }} onClick={() => handleDeleteClick(manageOrder._id)} className="fas fa-trash text-danger"></i></td>
-                                </tr>
+                                            <li>
+                                                <button
+                                                    onClick={() =>
+                                                        handleUpdateClick(manageOrder._id, "Shipped")
+                                                    }
+                                                    className="dropdown-item"
+                                                    type="button"
+                                                >
+                                                    Shipped
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button
+                                                    onClick={() =>
+                                                        handleUpdateClick(manageOrder._id, "Delivered")
+                                                    }
+                                                    className="dropdown-item"
+                                                    type="button"
+                                                >
+                                                    Delivered
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td><i style={{ cursor: 'pointer' }} onClick={() => handleDeleteClick(manageOrder._id)} className="fas fa-trash text-danger"></i></td>
+                            </tr> : <tr></tr> 
+                                
 
                             )
                         }

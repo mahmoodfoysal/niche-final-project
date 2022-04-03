@@ -14,6 +14,7 @@ import HomeProducts from './components/pages/Home/Products/HomeProducts';
 import ProductDetails from './components/pages/ProductDetails/ProductDetails';
 import OrderProduct from './components/pages/OrderProduct/OrderProduct';
 import CustomerOrders from './components/pages/CustomerDashboard/CustomerOrders/CustomerOrders';
+import Footer from './components/pages/Shared/Footer/Footer';
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
           </Route>
 
         </Switch>
+        <Footer></Footer>
       </BrowserRouter>
       </AuthProvider>
     </div>

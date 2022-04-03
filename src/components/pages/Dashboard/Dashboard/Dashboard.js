@@ -14,6 +14,7 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import Payment from '../Payment/Payment';
 import ManageOrders from '../ManageOrders/ManageOrders';
 import ManageProducts from '../ManageProducts/ManageProducts';
+import ApproveOrder from '../ApproveOrder/ApproveOrder';
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
@@ -28,6 +29,9 @@ const Dashboard = () => {
                         </li>
                         <li>
                             <Link to={`${url}/manageOrders`}>Manage Orders</Link>
+                        </li>
+                        <li>
+                            <Link to={`${url}/approvedOrder`}>Approved Orders</Link>
                         </li>
                         <li>
                             <Link to={`${url}/addProducts`}>Add Products</Link>
@@ -50,6 +54,9 @@ const Dashboard = () => {
                         </Route>
                         <Route path={`${path}/manageOrders`}>
                             <ManageOrders></ManageOrders>
+                        </Route>
+                        <Route path={`${path}/approvedOrder`}>
+                            <ApproveOrder></ApproveOrder>
                         </Route>
                         <Route path={`${path}/addProducts`}>
                             <AddProducts></AddProducts>
