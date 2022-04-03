@@ -3,7 +3,7 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <div>
+        <div className='mt-5'>
              <section className="footer-section">
         <div className="container">
             <div className="row footer-section-row">

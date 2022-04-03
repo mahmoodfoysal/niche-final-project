@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const ManageOrders = () => {
+const PendingOrder = () => {
     const [manageOrders, setManageOrders] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/manageOrders')
@@ -147,4 +147,4 @@ const ManageOrders = () => {
     );
 };
 
-export default ManageOrders;
+export default PendingOrder;

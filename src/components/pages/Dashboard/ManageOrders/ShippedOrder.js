@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const ApproveOrder = () => {
+const ShippedOrder = () => {
     const [manageOrders, setManageOrders] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/manageOrders')
@@ -70,7 +70,7 @@ const ApproveOrder = () => {
                 <tbody>
                     {
                         manageOrders.map((manageOrder) =>
-                            manageOrder.orderStatus === 'Approved' ? <tr>
+                            manageOrder.orderStatus === 'Shipped' ? <tr>
                             <th scope="row">*</th>
                             <td>{manageOrder.name}</td>
                             <td>{manageOrder.userEmail}</td>
@@ -147,4 +147,4 @@ const ApproveOrder = () => {
 );
 };
 
-export default ApproveOrder;
+export default ShippedOrder;
