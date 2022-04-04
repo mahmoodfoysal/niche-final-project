@@ -4,7 +4,7 @@ import RatingCard from './RatingCard/RatingCard';
 const ProductsRatings = () => {
     const [productsRatings, setProductsRatings] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/rating')
+        fetch('https://vast-lake-15285.herokuapp.com/rating')
             .then(res => res.json())
             .then(data => setProductsRatings(data))
     }, [])

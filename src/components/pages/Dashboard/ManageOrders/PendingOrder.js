@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const PendingOrder = () => {
     const [manageOrders, setManageOrders] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/manageOrders')
+        fetch('https://vast-lake-15285.herokuapp.com/manageOrders')
             .then(res => res.json())
             .then(data => setManageOrders(data))
     }, [manageOrders])
@@ -12,7 +12,7 @@ const PendingOrder = () => {
         const data = { status: status };
         const process = window.confirm("Are you sure")
         if (process) {
-            const url = `http://localhost:5000/manageOrders/${id}`;
+            const url = `https://vast-lake-15285.herokuapp.com/manageOrders/${id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -34,7 +34,7 @@ const PendingOrder = () => {
     const handleDeleteClick = (id) => {
         const process = window.confirm("Are you sure! You Want to delete")
         if (process) {
-            const url = `http://localhost:5000/manageOrders/${id}`;
+            const url = `https://vast-lake-15285.herokuapp.com/manageOrders/${id}`;
             fetch(url, {
                 method: 'DELETE',
             })

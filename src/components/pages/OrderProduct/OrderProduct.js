@@ -9,7 +9,7 @@ const OrderProduct = () => {
     const [product, setProduct] = useState([]);
     const {image, price, productName} = product
     useEffect(() => {
-        fetch(`http://localhost:5000/productDetails/${id}`)
+        fetch(`https://vast-lake-15285.herokuapp.com/productDetails/${id}`)
         .then(res => res.json())
         .then(data => setProduct(data))
     }, [])
@@ -20,7 +20,7 @@ const OrderProduct = () => {
         data.productName = productName;
         data.price = price;
         data.orderStatus = 'Pending'
-        fetch('http://localhost:5000/order', {
+        fetch('https://vast-lake-15285.herokuapp.com/order', {
             method:"POST",
             headers: {
                 'content-type':'application/json',

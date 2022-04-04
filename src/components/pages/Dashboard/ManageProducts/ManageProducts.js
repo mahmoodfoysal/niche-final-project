@@ -4,7 +4,7 @@ import ManageProduct from './ManageProduct';
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://vast-lake-15285.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setProducts(data))
     }, [products])

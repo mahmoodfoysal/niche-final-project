@@ -5,7 +5,7 @@ const ManageProduct = ({product}) => {
     const handleDeleteClick = (id) => {
         const process = window.confirm("Are you sure! You Want to delete")
         if(process) {
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://vast-lake-15285.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: 'DELETE',
             })

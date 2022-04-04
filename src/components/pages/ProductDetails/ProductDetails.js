@@ -12,7 +12,7 @@ const ProductDetails = () => {
     const {_id, image, productName, details, price, description } = productDetails;
     const keyPoint = details?.split("*")
     useEffect(() => {
-        fetch(`http://localhost:5000/productDetails/${id}`)
+        fetch(`https://vast-lake-15285.herokuapp.com/productDetails/${id}`)
             .then(res => res.json())
             .then(data => setProductDetails(data))
     }, [])
@@ -22,7 +22,7 @@ const ProductDetails = () => {
         data.name= users?.displayName;
         data.productImage = image;
         data.productName = productName;
-        fetch('http://localhost:5000/rating', {
+        fetch('https://vast-lake-15285.herokuapp.com/rating', {
             method:'POST',
             headers: {
                 'content-type': 'application/json',
