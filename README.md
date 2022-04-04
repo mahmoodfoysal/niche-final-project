@@ -1,7 +1,10 @@
-# This is Niche type website.
+# This is Niche type website Client.
 
 ### View our website
 [Live](https://niche-website-b62cc.firebaseapp.com/)
+
+### Server site code 
+[Server Code](https://github.com/mahmoodfoysal/niche-web-server-lapit)
 
 ## The technology that I used to develop this project
 
