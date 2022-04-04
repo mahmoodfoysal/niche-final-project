@@ -22,8 +22,9 @@ const MakeAdmin = () => {
         .then(data => {
             if(data.modifiedCount) {
                 setSuccess(true);
-
+                alert('Admin added successfully')
             }
+            setSuccess('');
         })
     }
 
