@@ -5,7 +5,7 @@ const CustomerOrders = () => {
     const { users } = useAuth();
     const [customerOrders, setCustomerOrders] = useState([]);
     useEffect(() => {
-        const url = `https://vast-lake-15285.herokuapp.com/${users?.email}`;
+        const url = `https://vast-lake-15285.herokuapp.com/manageOrders/${users?.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setCustomerOrders(data))
@@ -17,7 +17,7 @@ const CustomerOrders = () => {
     const handleDeleteClick = (id) => {
         const process = window.confirm("Are you sure! You Want to delete")
         if (process) {
-            const url = `https://vast-lake-15285.herokuapp.com/${id}`;
+            const url = `https://vast-lake-15285.herokuapp.com/manageOrders/${id}`;
             fetch(url, {
                 method: 'DELETE',
             })
