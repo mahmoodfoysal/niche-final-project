@@ -10,8 +10,7 @@ const CustomerOrders = () => {
             .then(res => res.json())
             .then(data => setCustomerOrders(data))
 
-    }, [customerOrders])
-    console.log(customerOrders)
+    }, [customerOrders, users?.email])
 
     // delete operation 
     const handleDeleteClick = (id) => {
@@ -57,7 +56,8 @@ const CustomerOrders = () => {
                     <tbody>
                         {
                             customerOrders.map((customerOrder) =>
-
+                            
+                                
                                 <tr>
                                     <th scope="row">*</th>
                                     <td>{customerOrder.name}</td>

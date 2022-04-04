@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ManageProduct = ({product}) => {
-    const {_id, productName, price, image} = product;
+    const {productName, image} = product;
     const handleDeleteClick = (id) => {
         const process = window.confirm("Are you sure! You Want to delete")
         if(process) {
@@ -22,7 +22,7 @@ const ManageProduct = ({product}) => {
             <h2 className='mt-5 mb-3'>Manage Products</h2>
             <div class="col">
     <div class="card">
-      <img src={image} class="card-img-top" alt="productImage"/>
+      <img height="200px" src={image} class="card-img-top" alt="productImage"/>
       <div class="card-body">
         <h5 class="card-title">{productName}</h5>
        <div className='text-center'>

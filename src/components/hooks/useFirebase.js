@@ -51,7 +51,6 @@ const useFirebase = () => {
         const destination = location?.state?.from || '/';
         history.replace(destination);
         const user = result.user;
-        console.log(user);
         setUsers(user);
         setAuthError('');
 
@@ -71,7 +70,6 @@ const useFirebase = () => {
         history.replace(destination);
         setUsers(user);
         saveUser(user.displayName, user.email, 'PUT');
-        console.log(user);
       }).catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;

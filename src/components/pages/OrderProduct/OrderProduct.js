@@ -16,7 +16,7 @@ const OrderProduct = () => {
 
 
     const { register, handleSubmit, reset } = useForm();
-    const onSubmit = data => {console.log(data)
+    const onSubmit = data => {
         data.productName = productName;
         data.price = price;
         data.orderStatus = 'Pending'

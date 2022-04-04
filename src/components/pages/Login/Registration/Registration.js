@@ -16,7 +16,6 @@ const Registration = () => {
     const handleOnBlur = (e) => {
         const field = e.target.name;
         const value = e.target.value;
-        console.log(field, value);
         const newUserData = {...createData}
         newUserData[field] = value;
         setCreateData(newUserData);
