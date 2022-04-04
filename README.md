@@ -1,5 +1,6 @@
 # This is Niche type website.
 
+### View our website
 [Live](https://niche-website-b62cc.firebaseapp.com/)
 
 ## The technology that I used to develop this project
